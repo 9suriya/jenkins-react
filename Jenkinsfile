@@ -8,11 +8,7 @@ pipeline {
             }
         }
 
-        stage('Add jenkins-react-app key') {
-            steps {
-                sh 'ssh-add /var/lib/jenkins/.ssh/jenkins-react-app.pem'
-            }
-        }
+        
 
         stage('Install dependencies') {
             steps {
