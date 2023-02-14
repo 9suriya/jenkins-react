@@ -4,12 +4,13 @@ pipeline {
         stage('Setup ssh-agent') {
             steps {
                 sh 'eval "$(ssh-agent -s)"'
+                sh 'echo $SSH_AUTH_SOCK'
             }
         }
 
         stage('Add jenkins-react-app key') {
             steps {
-                sh 'ssh-add ~/.ssh/jenkins-react-app.pem'
+                sh 'ssh-add /var/lib/jenkins/.ssh/jenkins-react-app.pem'
             }
         }
 
