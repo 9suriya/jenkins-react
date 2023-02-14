@@ -9,7 +9,7 @@ pipeline {
 
         stage('Add jenkins-react-app key') {
             steps {
-                sh 'ssh-add /path/to/jenkins-react-app.pem'
+                sh 'ssh-add ~/.ssh/jenkins-react-app.pem'
             }
         }
 
