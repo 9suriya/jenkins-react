@@ -1,18 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Setup ssh-agent') {
-            steps {
-                sh 'eval "$(ssh-agent -s)"'
-                sh 'echo $SSH_AUTH_SOCK'
-            }
-        }
-
+        
         
 
         stage('Install dependencies') {
             steps {
-                sh 'sudo npm install'
+                sh 'npm install'
      
             }
         }
